@@ -1,0 +1,94 @@
+---
+title: "EVOLUCIÓN DE LA POBREZA ENTRE LOS SEMESTRES ENERO-JUNIO Y ABRIL-SEPTIEMBRE"
+author: "Martin Gonzalez-Rozada. <br> Director de la Maestría en Econometría del Departamento de Economía de la [Universidad Torcuato Di Tella](https://www.utdt.edu/)."
+date: "Diciembre 2024"
+output: rmdformats::downcute
+---
+
+
+<style>
+p {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0px 0px 12px 0px;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    color: #9F2042;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(knitr.kable.NA = '')
+library(tidyverse)
+library(kableExtra)
+library(plotly)
+library(knitr)
+library(readxl)
+library("ggpmisc")
+library("ggh4x")
+
+# wd <- "C:/Users/mrozada/Dropbox/PlotPobreza/densidad"
+
+wd <- ""
+```
+
+**La incidencia de la pobreza cayó 8 puntos porcentuales entre el primer semestre del año y el semestre abril-septiembre de 2024 pasando de 52.9 a 44.9 por ciento** Esta disminución en la tasa de pobreza se produjo por una caída, *ceteris paribus*, de casi 15 puntos porcentuales explicada por un aumento del valor real del ingreso per capita familiar, medido con respecto a la inflación de la canasta básica total y una distribución del ingreso más igualitaria entre esos dos semestres. El efecto crecimiento y distribución del ingreso se vió amortiguado por un aumento, *ceteris paribus*, de casi 7 puntos porcentuales en la tasa de pobreza entre semestres producido por el incremento del valor real del umbral con que se mide la pobreza, la canasta básica total per capita.   
+
+**En el primer semestre de 2024, en el total de los 31 aglomerados urbanos capturados por la Encuesta Permanente de Hogares, la tasa de pobreza fue de 52.9 por ciento.** La figura muestra la función de densidad del ingreso per capita familiar (IPCF, curva azul) junto al valor de la canasta básica total per capita que en el primer semestre fue de AR$ 195,896 (linea vertical azul). El area total debajo de la curva azul representa al 100 por ciento de las personas que viven en hogares urbanos capturados por el procedimiento de la *Encuesta Permanenete de Hogares (EPH)* del *Instituto Nacional de Estadística y Censos (INDEC)*. El area sombreada en celeste muestra el porcentaje de personas que viven en hogares pobres. **La EPH es una encuesta representativa de 29.6 millones de personas que viven en hogares urbanos. La incidencia de la pobreza en el primer semestre del año indica que alrededor de 15.7 millones de personas viven en hogares urbanos pobres.** 
+
+**Figura 1. Incidencia de la Pobreza (en porcentaje). Total de Aglomerados**
+```{r fig1screenshot, echo=FALSE, fig.cap="Fuente: elaboración propia a partir de la Encuesta Permanente de Hogares (EPH)", out.width = '100%'}
+knitr::include_graphics(paste0(wd,"densidades1.png"))
+```
+Cuando se comparan tasas de pobreza de diferentes períocos los cambios puden descomponerse en tres fuentes o efectos. El primer efecto, denominado en la literatura **efecto crecimiento**, es causado por un cambio en el valor real del IPCF, medido con relación a la inflación de la CBT. Si el valor real del IPCF aumenta, *ceteris paribus*, la pobreza cae y viceversa. El segundo corresponde al **efecto distribución** y se debe a cambios en la distribución del IPCF. Cuando la distribución se hace más igualitaria, *ceteris paribus*, la tasa de pobreza cae y viceversa. El tercer efecto es el **efecto precios relativos** o **efecto linea** que se produce cuando cambia el valor real de la CBT per capita, que es el umbral con el que se compara el IPCF para determinar cuando un hogar es pobre y cuando no. Cuando este valor aumenta, *ceteris paribus*, la incidencia de la pobreza crece.
+
+La Figura 2 muestra que es lo que hubiera ocurrido con la incidencia de la pobreza del primer semestre del año si el IPCF hubiera sido el del semestre abril-septiembre. La función de densidad (curva roja) del IPCF del semestre abril-septiembre muestra el impacto del efecto crecimiento y del efecto distribución. El area violeta en a figura muestra que **el porcentaje de personas que viven en hogares pobres hubiera caído 14.9 puntos porcentuales con respecto al 52.9 por ciento de la tasa de pobreza del primer semestre.** Es importante notar que tanto el semestre enero-junio como el semestre abril-septiembre comparten un trimestre, el segundo. Esto implica que los cambios observados se deben a variaciones del IPCF que se produjeron entre el primer y tercer trimestres del año. En particular, la distribución del IPCF se volvió más igualitaria entre estos trimestres. El coeficiente de Gini del IPCF de las personas pasó de 0.467 en el primer trimestre a 0.435 en el tercer trimestre de 2024. El coeficiente de Gini es una de las medidas que utiliza el *INDEC* para medir la desigualdad del IPCF, es un número entre 0 y 1 y cuanto menor es el valor menor es la desigualdad de ingresos. Si bien la desigualdad permanece **alta** cayó casi 7 por ciento entre el primer y el tercer trimestre del año. La categorización de los valores del coeficiente de Gini que hace *Naciones Unidas* sugiere que un valor del coeficiente menor a 0.300 corresponde a una **desigualdad baja**, entre 0.300 y 0.400 la **desigualdad es moderada** y un valor del coeficiente por encima de 0.400 corresponde a una **desigualdad alta**. Al hacerse más igualitaria la distribución del IPCF entre el primer y tercer trimestres del año la tasa de pobreza resultante, *ceteris paribus*, es menor. El efecto crecimiento se puede ver en la figura por el desplazamiento hacia la derecha de la función de densidad del IPCF entre el primer semestre del año (curva azul) y el semestre abril-septiembre (curva roja). En este caso el valor real del IPCF promedio aumentó entre esos semestres induciendo, *ceteris paribus*, a una reducción en la incidencia de la pobreza (ver nota metodológica). **El crecimiento interanual en el valor real del IPCF promedio habría superado incluso al aumento de la CBT. Esto implica que en términos reales, con respecto a la inflación de la CBT, los ingresos, en promedio, se han recuperado completamente entre el tercer trimestre de 2023 y el tercero de 2024.**   
+
+**Figura 2. Incidencia de la Pobreza (en porcentaje). Total de Aglomerados**
+```{r fig2screenshot, echo=FALSE, fig.cap="Fuente: elaboración propia a partir de la Encuesta Permanente de Hogares (EPH)", out.width = '100%'}
+knitr::include_graphics(paste0(wd,"densidades2.png"))
+```
+
+La Figura 3 muestra en más detalle el efecto crecimiento decribiendo la evolución de la incidencia de la pobreza y de la indigencia en las personas y las variaciones del ingreso total del hogar (ITF), la CBA y la CBT para el tolal de los 31 aglomerados urbanos entre el semestre enero-junio y el semestre junio-noviembre de 2024. El estrato bajo está conformado por los deciles 1 a 4 de hogares según el ITF y Las variaciones de las canastas corresponden a promedios regionales. En términos semestrales, las brechas entre la variación de la CBT y la variación de la suma del ITF y entre la variación de la CBA y la variación de la suma del ITF de estratos bajos alcanzaron un pico en el primer semestre del año e impulsaron un aumento en la incidencia de la pobreza que alcanzó un 52.9 por ciento. Una brecha positiva indica que la variación de las canastas superó a la variación de los ingresos de los hogares y en esas circunstancias la medición de la pobreza (y la indigencia) aumenta. Durante el semestre febrero-julio de 2024 estas brechas comenzaron a cerrarse fundamentalmente por una disminución del aumento de las canastas y una recuperación de los ingresos. **A partir del semestre marzo-agosto de 2024 la variación de la CBT y de la suma del ITF promedio y de estratos bajos se estabilizó con los ingresos creciendo por encima del crecimiento de las canastas.** Esta situación explica una gran parte de la caída en la medición de la pobreza, como se mencionó anteriormente, de 52.9 por ciento en el primer semestre a 44.9 por ciento, en el semestre abril-septiembre.
+
+**Figura 3. Incidencia de la pobreza y de la indigencia en las personas y variaciones del ITF, la CBA y la CBT. Total 31 aglomerados urbanos.**
+```{r fig3screenshot, echo=FALSE, fig.cap="Fuente: elaboración propia a partir de la Encuesta Permanente de Hogares (EPH)", out.width = '100%'}
+knitr::include_graphics(paste0(wd,"Fig1.png"))
+```
+
+
+El area naranja entre las lineas verticales correspondientes a la CBT per capita del primer semestre del año (linea vertical azul) y la CBT per capita del semestre abril-septiembre (linea vertical roja)  en la Figura 4 mide el efecto linea con respecto a la distribución del IPCF del semestre abril-septiembre. **El aumento del la CBT per capita, *ceteris paribus*, habría incrementado la incidencia de la pobreza en 6.9 puntos porcentuales desde el 38 por ciento mostrado en la Figura 2. Es decir que la tasa de pobreza del semestre abril-septiembre sería del 44.9 por ciento (Figura 5).**  Medido con respecto a la distribución del IPCF del primer semestre del año, el efecto inflación de la CBT hubiera sido aumentar, *ceteris paribus*, 7.3 puntos porcentuales la incidencia de la pobreza del primer semestre.
+
+
+**Figura 4. Incidencia de la Pobreza (en porcentaje). Total de Aglomerados**
+```{r fig4screenshot, echo=FALSE, fig.cap="Fuente: elaboración propia a partir de la Encuesta Permanente de Hogares (EPH)", out.width = '100%'}
+knitr::include_graphics(paste0(wd,"densidades3.png"))
+```
+
+El area debajo de la función de densidad del IPCF del semestre abril-septiembre (curva roja en la Figura 5) representa al 100 por ciento de las personas que viven en hogares urbanos en el semestre de referencia y el area debajo de la función de densidad y a la izquierda del valor de la CBT per capita (AR$ 227,551) sombreada en naranja es el porcentaje de personas que viven en hogares pobres. **La caída en la tasa de pobreza desde el 52.9 por ciento estimado para el primer semestre del año al 44.9 por ciento en el semestre abril-septiembre se puede descomponer en una caída de casi 15 puntos porcentuales explicada por los efectos crecimiento y distribución y un aumento de casi 7 puntos porcentuales explicado por el efecto linea. La estimación del 44.9 por ciento para la incidencia de la pobreza indica que alrededor de 13.3 millones de personas viven en hogares urbanos pobres, sugiriendo que alrededor de 2.4 millones de personas salieron de la pobreza entre el primer semestre del año y el semestre abril-septiembre.**  
+
+**Figura 5. Incidencia de la Pobreza (en porcentaje). Total de Aglomerados**
+```{r fig5screenshot, echo=FALSE, fig.cap="Fuente: elaboración propia a partir de la Encuesta Permanente de Hogares (EPH)", out.width = '100%'}
+knitr::include_graphics(paste0(wd,"densidades4.png"))
+```
+## NOTA METODOLÓGICA
+
+### Cómo se calcula la pobreza en Argentina?
+
+Las nociones de pobreza e indigencia se miden en Argentina mediante el enfoque de *Linea de Pobreza* y *Linea de Indigencia*, o *enfoque monetario*, o *método de la linea*. La **Línea de Indigencia** establece si "los hogares cuentan con ingresos suficientes para cubrir una canasta de alimentos capaz de satisfacer un umbral mínimo de necesidades energéticas y proteicas, denominada Canasta Básica Alimentaria (CBA). De esta manera, los hogares que no superan ese umbral o línea son considerados indigentes. Los componentes de la CBA se valorizan con los precios medios relevados por el Índice de Precios al Consumidor (IPC) para cada período de medición. (Metodología 22, INDEC)". Es decir que la valorización de la CBA a través de los precios medios del IPC tiene una frecuencia mensual. La CBA no es una canasta de alimentos efectivamente consumida, puede ser que haya hogares que no consuman alguno o ninguno de los alimentos incluidos en la canasta sino que se trata de una canasta *normativa* que **refleja los niveles de bienestar mínimos requeridos para no ser considerado indigente. En otras palabras, un hogar no se considera indigente si tiene los ingresos necesarios para comprar, si así lo deseara, los alimentos establecidos en esa canasta.** Esta definición concepttual es fundamental para operacionalizar la medición de la indigencia. **Indica que los productos de la canasta deben estar disponibles y se deben valorizar al momento de su compra, si así el hogar lo decidiera.**  Adicionalmente, en la práctica, se calculan canastas regionales. Los componentes de las CBA regionales se valorizan usando los precios medios del aglomerado Gran Buenos Aires, ajustados para las regiones con los coeficientes de Paridad de Poder de Compra del Consumidor.
+
+En la práctica el ingreso del hogar disponible para consumir o ahorrar se define como la suma de todo ingreso monetario de cualquier fuente que recibe cada uno de los integrantes del hogar. Estos ingresos pueden provenir del trabajo, de inversiones  o de programas sociales (OECD, Eurostat). En Argentina estos ingresos se miden a traves del Ingreso Total Familiar (ITF) capturado en la EPH. El ITF incluye la sumatoria de todos los ingresos netos laborales y no laborales de los integrantes del hogar. Para reflejar las diferencias  en el tamaño y composición del hogar se ajusta dividiéndolo por el número de adultos equivalentes en el hogar y se calcula el **ingreso total familiar por adulto equivalente** o se lo divide por el número de integrantes del hogar y se calcula el **ingreso total familiar per capita**. Para el cálculo de la indigencia el ITF por adulto equivalente se compara con la CBA por adulto equivalente o el ITF per capita se compara con la CBA per capita. En cualquiera de los casos si el ingreso utilizado es menor a la valorización de la CBA respectiva, el hogar se clasifica como indigente y todos sus miembros se cosideran viviendo en un hogar indigente. El porcentaje de personas viviendo en hogares indigentes se conoce como tasa de indigencia.
+
+Como se capturan los ingresos con la EPH? La medición de la pobreza y la indigencia requiere contar con información de precios al consumidor e ingresos familiares que se relevan o indagan con periodicidad mensual. Por ejemplo, si los perceptores de ingresos de un hogar trabajan en el sector registrado de la economía usualmente cobran su ingreso laboral, digamos del mes de agosto, en los primeros días de septiembre y gastan ese ingreso sobre los alimentos valorizados a los precios de septiembre. La EPH captura esos ingresos a través del ITF. **La comparación para definir si el hogar es indigente o no siempre es entre el ingreso disponible para consumir, que usualmente es el del mes anterior al de consumo, con la valorización de la CBA del mes en el que se produce el consumo.** Existe una heterogeneidad de modalidades que coexisten en la práctica. Por ejemplo, desde el punto de vista de los ingresos laborales, es sabido que hay sectores con corrientes de ingresos diarios o jornales, cobros semanales en el sector de la construcción, cobros por changas o trabajos puntuales sin periodicidad fija en el sector informal o servicios, etc. **Más allá de las distintas realidades laborales o de cobro de ingresos por otras fuentes, la EPH indaga en cada hogar acerca de los ingresos laborales de un mes de referencia e ingresos por otras fuentes no laborales con referencia mensual o trimestral.** De otro modo, la estimación de ingresos de los hogares con frecuencia semanal o mayor requeriría la aplicación de supuestos para ajustar o distribuir los ingresos considerando otra secuencia temporal para transformalos en mensuales y poder compararlos con la CBA para determinar si el hogar es indigente.
+
+La **Línea de Pobreza** extiende el umbral con el que se mide la indigencia para incluir no sólo los consumos alimentarios mínimos sino también otros consumos básicos no alimentarios (vestimenta, transporte, educación etc.). Estos consumos alimentarios y no alimentarios conforman la Canasta Básica Total (CBT), que es el umbral con el que se comparan los ingresos del hogar para determinar si el hogar es o no pobre. **Mientras que la canasta alimentaria es una canasta normativa, la canasta básica total se construye en base a la evidencia empírica que refleja los hábitos de consumo alimentario y no alimentario de la población de referencia definida por aquellos hogares que tiene ingresos apenas superiores a la linea de indigencia.** La población de referencia es nacional y urbana y se ubica entre los percentiles 29 y 48 de la distribución de los ingresos netos de alquiler de acuerdo a la Encuesta Nacional de Gastos de los Hogares (ENGHo) de 2004/2005. Los hábitos de consumo de la población de referencia se indagan siempre a traves de las encuestas de gastos de los hogares.
+
+En la población de referencia actual el 72 por ciento de los hogares tiene jefe ocupado y de esos ocupados alrededor del 64 por ciento es asalariado que trabaja en el sector registrado de la economía. Si se consideran todos los perceptores de ingresos de los hogares de la población de referencia casi el 55 por ciento trabaja en el sector registrado de la economía.
+
+La extensión de la CBA a la CBT se realiza utilizando la inversa del coeficiente de Engel (ICE). El coeficiente de Engel es el porcentaje de los gastos alimentarios en el gasto total de los hogares de la población de referencia. Al igual que con la CBA, para incorporar las diferencias observadas en las pautas de consumo regionales en el componente no alimentario se elabora un coeficiente ICE específico para cada región. El coeficiente de Engel se actualiza por el cambio en el precio relativo de los alimentos respecto de los demás bienes y servicios. Para esta actualizacón peródica se utilizan los precios relevados por el ïndice de Precios al Consumidor (IPC) tomando en cuenta la estructura de gastos específica de la población de referencia. 
+
+Claramente se puede discutir la noción de ingreso disponible para consumir y la mejor manera de capturalo con las nuevas formas de percepción de ingresos a través de billeteras virtuales o de la Tarjeta Alimentar o de la Asignación Universal por Hijo que a veces coinciden con el mes del consumo, o que algunos hogares utilicen ahorros pasados o tarjetas de crédito para consumir pero siempre teniendo en cuenta que la medición de la pobreza por línea debería ser representativa de la población de referencia y no de un grupo particular de hogares. 
